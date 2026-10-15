@@ -1,0 +1,87 @@
+Build a full-stack web application called Smart Calendar Automation.
+
+Main objective
+
+Create a mobile-friendly automation dashboard that connects to my Google account and automates Google Calendar event creation, Google Meet scheduling, guest invitations, and email reminders.
+
+1. Google account integration
+
+- Implement secure Google OAuth 2.0 login.
+- Connect to Google Calendar through the official Google Calendar API.
+- Request only the permissions necessary for the enabled features.
+- Store OAuth tokens securely on the server.
+- Never expose client secrets or access tokens in the frontend.
+
+2. Event creation
+
+Create an event form with:
+
+- Event title
+- Event date
+- All-day or specific start and end time
+- Description
+- Guest email addresses
+- Calendar selection
+- Repeat frequency
+- Optional Google Meet link
+- Custom reminder settings
+
+3. Reminder automation
+
+Allow users to configure:
+
+- A reminder a specified number of days or weeks before an event
+- A custom reminder time, such as 9:00 AM
+- Email reminders or supported calendar notifications
+- Multiple reminders per event
+- Time zone selection
+- Enable/disable controls
+
+Use Google Calendar reminders where supported. Use a reliable background job scheduler for custom reminders that require more flexible timing. Prevent duplicate reminders and log delivery status.
+
+4. Google Meet automation
+
+- Create a unique Google Meet conference for each applicable event using the Calendar API.
+- Save the returned Meet URL.
+- Attach the link to the event.
+- Allow guests to receive invitations through Google Calendar.
+- Handle pending conference creation and API errors correctly.
+
+5. Bulk event automation
+
+- Support CSV and Excel imports.
+- Allow mapping of columns to event titles, dates, descriptions, and guest email addresses.
+- Preview imported records before execution.
+- Validate email addresses and dates.
+- Provide a confirmation screen before creating events or sending invitations.
+- Display successful, failed, and skipped records.
+- Prevent duplicate events when retrying failed operations.
+
+6. Dashboard
+
+Display:
+
+- Upcoming events
+- Scheduled reminders
+- Google Meet links
+- Automation history
+- Failed jobs
+- Search and filtering
+- Edit, cancel, pause, and resume controls
+
+7. Technology
+
+Use React, TypeScript, Tailwind CSS, Node.js, Express, and PostgreSQL. Use a secure background scheduler and server-side API integration.
+
+8. Safety and reliability
+
+- Do not fabricate Google Calendar confirmations or impersonate financial institutions.
+- Never request, collect, or store users' OTPs or passwords.
+- Require explicit confirmation before sending bulk invitations.
+- Include secure authentication, input validation, rate limiting, and error handling.
+
+9. Delivery requirements
+
+Build the actual working application, not just a UI mockup. Set up the database, API routes, OAuth flow, background jobs, and responsive frontend. Include a README explaining Google Cloud configuration, API credentials, environment variables, and deployment.
+
+Start by building the event creation flow and Google OAuth integration, then implement Meet links, reminders, and bulk imports. Clearly identify any feature that still needs configuration or testing.
